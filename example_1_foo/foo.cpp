@@ -10,8 +10,8 @@ struct Foo {
         : name(aName) {}
 
     void rename(const std::string &aName) {
-        std::cout << "My new name is " << aName << std::endl;
         name = aName;
+        std::cout << "My new name is " << name << std::endl;
     }
 
     void speak() {
