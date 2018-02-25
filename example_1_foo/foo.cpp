@@ -19,6 +19,12 @@ struct Foo {
     }
 };
 
+void meetFriend(const Foo &aFoo, const std::string &aFriend) {
+    std::cout << "Im " << aFriend 
+              << ". Nice to meet you, " << aFoo.name 
+              << '!' << std::endl;
+}
+
 BOOST_PYTHON_MODULE(foo) {
     using namespace boost::python;
     class_<Foo>("Foo", init<std::string>())
@@ -26,4 +32,5 @@ BOOST_PYTHON_MODULE(foo) {
         .def("rename", &Foo::rename)
         .def_readonly("name", &Foo::name)
         ;
+    def("meet_friend", &meet_friend);
 }
