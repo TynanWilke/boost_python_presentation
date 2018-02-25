@@ -25,6 +25,7 @@ struct Entity {
     // Heal operator overloading
     Entity& operator+=(const int aHp) {
         hp += aHp;
+        return *this;
     }
 
     std::string asStr() const {
