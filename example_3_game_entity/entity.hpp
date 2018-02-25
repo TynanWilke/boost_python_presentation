@@ -12,7 +12,12 @@ struct Entity {
 
     Entity(const std::string &aName, const int aHp) 
         : name(aName), hp(aHp), maxHp(aHp) {}
+    virtual ~Entity() {}
 
+    // Returns the power of an attack
+    virtual int power() const = 0;
+
+    // Returns true if the entity is dead
     bool dead() {
         return hp <= 0;
     }
@@ -22,9 +27,6 @@ struct Entity {
         ss << '[' << name << "] " << hp << '/' << maxHp;
         return ss.str();
     }
-
-    virtual ~Entity() {}
-    virtual int power() const = 0;
 };
 
 #endif /* ENTITY_HPP */
