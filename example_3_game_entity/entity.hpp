@@ -22,6 +22,11 @@ struct Entity {
         return hp <= 0;
     }
 
+    // Heal operator overloading
+    Entity& operator+=(const int aHp) {
+        hp += aHp;
+    }
+
     std::string asStr() const {
         std::ostringstream ss;
         ss << '[' << name << "] " << hp << '/' << maxHp;

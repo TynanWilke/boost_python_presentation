@@ -18,6 +18,7 @@ BOOST_PYTHON_MODULE(game) {
         .def_readonly("name", &EntityWrap::name)
         .def_readonly("hp", &EntityWrap::hp)
         .def_readonly("max_hp", &EntityWrap::maxHp)
+        .def(self += int())
         .def("__str__", &EntityWrap::asStr)
         ;
     def("fight", &fight);
