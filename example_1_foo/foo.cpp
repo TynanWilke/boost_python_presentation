@@ -32,5 +32,5 @@ BOOST_PYTHON_MODULE(foo) {
         .def("rename", &Foo::rename)
         .def_readonly("name", &Foo::name)
         ;
-    def("meet_friend", &meet_friend);
+    def("meet_friend", &meetFriend);
 }

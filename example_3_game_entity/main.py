@@ -46,8 +46,10 @@ if __name__ == "__main__":
     print e1
     print e2
 
+    """
     # Heal the entities
     e1 += 100
     e2 += 20
     print e1
     print e2
+    """
